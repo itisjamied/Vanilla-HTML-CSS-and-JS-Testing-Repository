@@ -1,0 +1,53 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.gif-background {
+    position: fixed; /* Use fixed or absolute position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./stars.gif');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .gif-background {
+        background-position: right; /* Adjusts to show the left part on mobile */
+    }
+}
+
+.triangle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 0, 128, 0.6); /* Purple with 60% opacity */
+    clip-path: polygon(100% 78%, 0 56%, 0 100%);
+}
+
+
+.diamond {
+    position: fixed;
+    right: -10%; /* Positioning to the right, partially off-screen */
+    top: 75%; /* Vertically centered */
+    transform: translateY(-50%); /* Adjust for the height of the element */
+    transition: transform 0.5s ease, right 0.5s ease, top 0.5s ease; /* Smooth transition */
+    cursor: pointer; /* Change cursor on hover */
+    height: 500px; /* Adjust height as needed */
+    filter: invert(14%) sepia(72%) saturate(4649%) hue-rotate(291deg) brightness(74%) contrast(120%);
+}
+
+.diamond:hover {
+    filter: invert(100%) sepia(12%) saturate(7434%) hue-rotate(244deg) brightness(116%) contrast(114%);
+}
+
+
+
+
+
