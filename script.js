@@ -17,20 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         isCentered = !isCentered;
     });
 
-    // object.addEventListener('load', function () {
-    //     const svgDoc = object.contentDocument;
-    //     const svgRoot = svgDoc.documentElement;
 
-    //     svgRoot.addEventListener('mouseover', function () {
-    //         svgRoot.querySelectorAll('path').forEach(path => {
-    //             path.style.fill = 'red';
-    //         });
-    //     });
 
-    //     svgRoot.addEventListener('mouseout', function () {
-    //         svgRoot.querySelectorAll('path').forEach(path => {
-    //             path.style.fill = 'originalColor';
-    //         });
-    //     });
-    // });
 });
