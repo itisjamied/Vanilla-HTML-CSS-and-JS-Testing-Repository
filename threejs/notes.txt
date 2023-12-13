@@ -1,0 +1,7 @@
+to run project:
+npx vite
+
+------------
+
+In three js we need -> 
+scene, camera and renderer( so that we can render the scene with camera.)
