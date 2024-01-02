@@ -1,0 +1,62 @@
+
+
+
+<!--THE DOORS  -->
+<!-- <div class="Door Boss">
+  <div class="Doors">
+    <div id="left"><img src ="https://static1.squarespace.com/static/646e314847f2317236a9823a/t/658476a6f5242d58935ac312/1703179942833/_LeftDoorFinal.png"></div>
+    <div id="right"><img src = "https://static1.squarespace.com/static/646e314847f2317236a9823a/t/658476a642ec4f63cf866779/1703179942833/_RightDoorFinal.png"></div>
+</div>
+</div> -->
+
+<script src="./test.js"></script>
+
+/*THE DOORS */
+.DoorBoss
+  {
+     position: fixed;
+     top: 10vh;
+    z-index:-2;
+    left:0;
+  }
+.Doors
+  {
+    display: flex;
+    flex-direction:row;
+  }
+
+#left
+  {
+    background-color: rgba(0,0,0,0);
+  }
+
+#right
+  {
+    background-color: rgba(0,0,0,0);
+  }
+  
+#left.animate
+  {
+  transform: translateX(-1000px);
+  transition-property: transform;
+  transition-duration: 3s;
+  }
+
+#right.animate
+  {
+    transform: translateX(1000px);
+  transition-property: transform;
+  transition-duration: 3s;
+  }
+
+  //PLAYS THE DOOR ANIMATION ONCE YOU CLICK ON THE DOORS//
+  //   left.onclick = function(){
+  //   left.classList.add('animate');
+  //   right.classList.add('animate');
+  //     console.log("LEFT CLICK");
+  //  };
+
+  // right.onclick = function(){
+  //   left.classList.add('animate');
+  //   right.classList.add('animate');
+  // }

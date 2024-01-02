@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> AFH Annual Report </title>
+  <link rel="stylesheet" href="test.css">
+</head>
+<!-- mobile overlay -->
+<div class="mobile-overlay">
+    This site is best viewed on a desktop
+</div>
+
+<!-- overlay -->
+<img 
+  src="https://static1.squarespace.com/static/646e314847f2317236a9823a/t/656f9493126ada2c59829bf0/1701811347422/overlay.png"
+  alt="Overlay Border"
+  class="overlay"
+>
+
+
+<!-- background -->
+<div class="backgrounds">
+  <div id="6" class="floor6"></div>
+  <div id="5" class="floor5"></div>
+  <div id="4" class="floor4"></div>
+  <div id="3" class="floor3"></div>
+  <div id="2" class="floor2"></div>
+  <div id="1" class="floor1"></div>
+</div>
+
+
+<!-- title -->
+<div class="title-container">
+    <h1 class="title">Title</h1>
+    <div class="title-info">
+        <div class="close-button">x</div>
+        <div class="title-description">    
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis odio lectus, consequat eu euismod at, pretium nec turpis. Phasellus convallis et tortor nec vehicula. Sed ut gravida est. 
+        </div>
+    </div>
+</div>
+<a href="https://www.afhboston.org">
+   <img class="logo" src="https://static1.squarespace.com/static/646e314847f2317236a9823a/t/6581c584c5aac77801f9517f/1703003524404/AFH_Day_Wordmark.png"/>
+</a>
+
+<!-- floor indicator -->
+<div class="floor-indicator-container">
+  <div class="floor-indicator">
+    <div class="panel">
+      <div class="option" id="60"> R </div>
+      <div class="option" id="50"> F5 </div>
+      <div class="option" id="40"> F4 </div>
+      <div class="option" id="30"> F3 </div>
+      <div class="option" id="20"> F2 </div>
+      <div class="option" id="10"> F1 </div>
+    </div>
+  </div>
+</div>
+<!--  nav buttons -->
+<div class="navButtons">
+  <div class="nav-button-container">
+    <a  class="nav-button" href="https://www.afhannualreport.org/">Letter</a>
+  </div>
+  <div class="nav-button-container">
+    <a class="nav-button" href="https://www.afhannualreport.org/supporters">Supporters</a>
+  </div>
+  <div class="nav-button-container">
+    <a class="nav-button" href="https://www.afhannualreport.org/numbers">Numbers</a>
+  </div>
+</div>
+
+<!--  elevator button -->
+<div class="elevatorButtons">
+  <div class="elevator-button-container">
+  <div id="elevator-button-up" class="elevator-button">
+      <a href="javascript:void(0)"> <img src="https://static1.squarespace.com/static/646e314847f2317236a9823a/t/65721c0bedebf862ebf02bbb/1701977099980/UpArrow.png" alt="Click to Move Up a Floor."></a>
+  </div>
+  </div>
+  <div class="elevator-button-container">
+  <div id="elevator-button-down" class="elevator-button">
+      <a href="javascript:void(0)"><img src="https://static1.squarespace.com/static/646e314847f2317236a9823a/t/65721c0fe4334e674c611bf3/1701977103932/DownArrow.png"></a>
+  </div>
+  </div>
+</div>
+
+<div class="endNote">Thank you for joining us on this journey! <br> Visit our website to learn more about our mission and work.</div>
+<!-- nodes -->
+<div id="nodesContainer"></div>
+
+<a id="afh" href="https://www.afhboston.org">
+  <img class="lettermark" src="https://static1.squarespace.com/static/646e314847f2317236a9823a/t/65820bc961fa6b5caf0c5c60/1703021513469/AFH_Night_Lettermark.png">
+</a>
+
+
+
+
+<!--THE DOORS  -->
+<!-- <div class="Door Boss">
+  <div class="Doors">
+    <div id="left"><img src ="https://static1.squarespace.com/static/646e314847f2317236a9823a/t/658476a6f5242d58935ac312/1703179942833/_LeftDoorFinal.png"></div>
+    <div id="right"><img src = "https://static1.squarespace.com/static/646e314847f2317236a9823a/t/658476a642ec4f63cf866779/1703179942833/_RightDoorFinal.png"></div>
+</div>
+</div> -->
+
+  
+<script src="./test.js"></script>
+
+
+</html>
+
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  
+header {
+    display:none;
+}
+  
+footer {
+  display:none;   
+}
+
+/*THE DOORS */
+.DoorBoss
+  {
+     position: fixed;
+     top: 10vh;
+    z-index:-2;
+    left:0;
+  }
+.Doors
+  {
+    display: flex;
+    flex-direction:row;
+  }
+
+#left
+  {
+    background-color: rgba(0,0,0,0);
+  }
+
+#right
+  {
+    background-color: rgba(0,0,0,0);
+  }
+  
+#left.animate
+  {
+  transform: translateX(-1000px);
+  transition-property: transform;
+  transition-duration: 3s;
+  }
+
+#right.animate
+  {
+    transform: translateX(1000px);
+  transition-property: transform;
+  transition-duration: 3s;
+  }
+
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9); /* White cast */
+    color: black;
+    text-align: center;
+    padding-top: 50%; /* Center vertically */
+    font-size: 20px;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+@media only screen and (max-width: 1200px) {
+    .mobile-overlay {
+        display: block;
+    }
+
+    body {
+        overflow: hidden; /* Prevent scrolling */
+    }
+}
+  /* ---------- overlay --------- */
+  
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+}
+
+  /* ---------- floors --------- */
+
+
+.backgrounds {
+  position: absolute;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5vw;
+  margin-bottom:5vh;
+}
+
+.floor1{
+  background-image: url('https://static1.squarespace.com/static/646e314847f2317236a9823a/t/657b2241ef20bb0e38f30fe1/1702568514769/1.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  width: 87vw;
+  height:87vh;
+  z-index: -2;
+  margin-right:5vw;
+}
+
+.floor2{
+  background-image: url('https://static1.squarespace.com/static/646e314847f2317236a9823a/t/657b224191ab5b344bc3882d/1702568514752/2.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  width: 87vw;
+  height:87vh;
+  z-index: -2;
+  margin-right: 3vw;
+}
+
+.floor3{
+  background-image: url('https://static1.squarespace.com/static/646e314847f2317236a9823a/t/6581fb52eb45bf26e73bcee7/1703017298180/3.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  width: 87vw;
+  height:87vh;
+  z-index: -2;
+   margin-right:3vw;
+}
+
+.floor4{
+  background-image: url('https://static1.squarespace.com/static/646e314847f2317236a9823a/t/657b224178637f1b697c4e85/1702568514794/4.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  width: 87vw;
+  height:87vh;
+  z-index: -2;
+  margin-right:4vw;
+}
+
+.floor5{
+  background-image: url('https://static1.squarespace.com/static/646e314847f2317236a9823a/t/657b22418ab149470aba8fe4/1702568514948/5.1.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  width: 87vw;
+  height:87vh;;
+  z-index: -2;
+   margin-right:4vw;
+}
+
+.floor6{
+  background-image: url('https://static1.squarespace.com/static/646e314847f2317236a9823a/t/657b224122ee173e9c750415/1702568515225/5.2.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  margin-right:1vw;
+  width: 86vw;
+  height:89vh;
+  z-index: -2;
+  margin-right:6vw;
+}
+  /* ---------- title --------- */
+  
+.title-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; 
+    margin-top: 3vh;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-family: 'Story-Header';
+    position: relative;
+}
+  
+.title-info{
+ position:absolute;
+ top: 15vh;
+ left:20vw;
+ display:none;
+ z-index:5;
+  width: 60vw;
+/*   text styles */
+  color:black;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Lato-Bold';
+  background-color:white;
+  border-radius:8px;
+  border: solid #62359E 6px;
+  padding:10px;
+  opacity: 0; 
+  transition: opacity 0.5s ease-in-out; 
+} 
+
+.title:hover {
+  color: #F92C9B;
+}
+
+.title:hover ~ .title-info {
+  display: block;
+  opacity: 1; 
+}
+
+.title-hover {
+  color: #F92C9B;
+}
+
+
+.close-button {
+    position: absolute;
+    background-color: red;
+    color: black;
+    font-weight: bolder;
+    font-size: 2rem;
+    padding: 3px 10px 20px 10px; /* Top, Right, Bottom, Left padding */
+    left: 60vw;
+    top: -22px;
+    border: 4px solid purple;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+  /* ---------- endNote --------- */
+  .endNote {
+    font-weight:600;
+    line-height:1.5;
+    position:absolute;
+    width:35vw;
+    top: 30vh;
+    left: 50vw;
+    color:black;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Lato-Bold';
+    background-color:white;
+    border-radius:8px;
+    border: solid #62359E 6px;
+    padding:10px;
+  }
+
+/* ---------- logo  --------- */
+.logo {
+    position:fixed;
+    top:4vh;
+    left:2vh;
+    height:7vh;
+    width:auto;
+    z-index:10;
+}
+.logo:hover{
+    cursor:pointer;
+}
+  /* ---------- floor indicator --------- */
+  
+.floor-indicator-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    left:0%;
+    top: 0%;
+    height: 100vh;
+    z-index: 2;
+    margin-left: 2vw;
+}
+  
+.floor-indicator {
+    background-color: #62359E;
+    padding: 15px;
+    border-radius: 12px;
+    border: 3px solid #62359E;
+    background: #62359E;
+    box-shadow: 0px 6px 0px 4px #49207F;
+}
+  
+.panel {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #7024D6;
+    padding: 0px;
+    border-radius: 12px;
+    height: 54vh;
+}
+
+  
+.option {
+    color: #F92C9B;
+    font-weight:bold;  
+    text-align: center;
+    font-family: 'Modern-Bold';
+    margin:10px; 
+    background-color:#432736;
+    padding:10px;
+    width:clamp(50px,5px,10px);
+/*    background-image:url("https://static1.squarespace.com/static/646e314847f2317236a9823a/t/65806f5fcc8dda0c2166588a/1702915935591/Squircle+%282%29.png"); */
+} 
+
+.option:hover {
+  cursor:pointer;
+}
+  
+  /* ---------- bottom nav buttons --------- */
+.navButtons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      bottom: 3vh; 
+      left: 0;
+      right: 0;
+      z-index: 2;
+      transform:translateY(20px);
+}
+  .nav-button {
+    font-size: 24px;
+    padding: 20px;
+    margin: 0; /* remove margin if not necessary */
+    background-color: #F92C9B;
+    color: #FFDA05;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    border-radius: 6px;
+    border: 1px solid #D41D7F;
+    background: #F92C9B;
+    box-shadow: 0px 4px 0px 4px #D41D7F;
+    width: 100%; /* button takes full width of the container */
+}
+
+  
+.nav-button-container {
+    border-radius: 12px;
+    background: #62359E;
+    box-shadow: 0px 4px 0px 2px #4E2586;
+    padding: 10px;
+    margin: 10px;
+    width: 14vw;
+    display: flex;
+    justify-content: center;
+}
+  
+  .nav-button:hover {
+    background-color: #D41D7F; 
+    box-shadow: 0 2px #D41D7F; 
+    transform: translateY(4px); 
+  }
+  
+  /* ---------- elevator buttons --------- */
+  
+  .elevator-button-container {
+    border-radius: 12px;
+    border: 3px solid #531E9B;
+    background: #7024D6;
+    box-shadow: 0px 4px 0px 2px #531E9B;
+    margin-top:2vh;
+    padding: 10px 8px;
+  }
+    
+  
+  .elevatorButtons {
+    position: fixed;
+    right: 2vw;
+    top: 34vh;
+  }
+  
+  .elevator-button {
+    padding: 50px 20px;
+    background-color: #FFDA05; 
+    color: #DBBC00;
+    border: 2px solid #DBBC00; 
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease; 
+    box-shadow: 0 5px #DBBC00;
+    border-radius: 8px;
+  }
+  
+  .elevator-button:hover {
+    background-color: #DBBC00;
+    box-shadow: 0 2px #DBBC00; 
+    transform: translateY(4px);
+  }
+  
+  /* ---------- nodes ---------- */
+    #nodesContainer {
+      position: relative; 
+  }
+  
+  .node {
+    position:absolute;
+    cursor:pointer;
+    width: 6vw;
+    z-index:2;
+  }
+   
+  .node .dot {
+    transition: transform 0.3s ease;
+    animation: pulse 1s infinite;
+    width: 100%;
+    height: auto;
+  }
+  
+  @keyframes pulse {
+      0%, 100% {
+          transform: scale(1);
+      }
+      50% {
+          transform: scale(1.1);
+      }
+  }
+  
+  .node:hover .dot {
+      animation: none; 
+  }
+    
+  .node .popup {
+      display: none;
+      position: absolute;
+      width: 350px;
+      height: 300px;
+      top: -80%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index:8;
+      background-image: url('https://static1.squarespace.com/static/646e314847f2317236a9823a/t/6577300edf36dd556ae9f649/1702309902327/Squircle.png')
+  }
+  
+  .node:hover .popup {
+    display: block;  
+    display:flex;
+    flex-direction:column;
+  }
+  
+  .popup .popup-title {
+    margin-left:2vw;
+    margin-right:2vw;
+    margin-top:5vw;
+    font-size:24px;
+    text-align:left;
+    font-weight:bolder;
+    font-family:Gotham;
+  }
+  
+  .popup a {
+    margin-left:2vw;
+    margin-top:2vw;
+    font-size:20px;
+    text-align:left;
+    color:#F92C9B;
+  }
+
+/* floor 1 nodes */
+  
+  .node:nth-child(1) {
+      position:absolute;
+      top: 480vh;
+      left: 75vw;
+  }
+  
+  .node:nth-child(2) {
+      position:absolute;
+      top: 470vh;
+     left: 60vw;
+  }
+    
+  .node:nth-child(3) {
+      position:absolute;
+      top: 490vh;
+      left: 23vw;
+  }
+  
+
+
+/* floor 2 nodes */
+.node:nth-child(4){
+    position:absolute;
+    top: 390vh;
+    left: 75vw 
+}
+
+.node:nth-child(5){
+    position:absolute;
+   top: 389vh;
+    left: 23vw 
+}
+
+.node:nth-child(6){
+    position:absolute;
+    top: 390vh;
+    left: 37vw;
+}
+
+/* floor 3 nodes */
+.node:nth-child(7){
+    position:absolute;
+    top: 385vh;
+    left: 50vw;
+}
+
+.node:nth-child(8){
+    position:absolute;
+    top: 320vh;
+    left: 30vw 
+}
+
+.node:nth-child(9){
+    position:absolute;
+    top: 293vh;
+    left: 78vw;
+}
+
+.node:nth-child(10){
+    position:absolute;
+    top: 298vh;
+    left: 46vw;
+}
+
+.node:nth-child(11){
+    position:absolute;
+    top: 282vh;
+    left: 16vw;
+}
+
+/* floor 4 nodes */
+.node:nth-child(12){
+    position:absolute;
+    top: 235vh;
+    left: 45vw 
+}
+
+.node:nth-child(13){
+    position:absolute;
+    top: 223vh;
+    left: 77vw;
+}
+
+.node:nth-child(14){
+    position:absolute;
+    top: 210vh;
+    left: 20vw;
+}
+
+.node:nth-child(15){
+    position:absolute;
+    top: 210vh;
+    left: 50vw;
+}
+
+
+/*AFH LOGO AT TOP OF SCREEN  */
+  #afh
+  {
+    width: 8vw;
+    z-index: 0;
+    filter: invert(100%);
+     position:absolute;
+    top: 50vh;
+    left: 65vw;
+    animation: logo-pulse 2s infinite;
+  }
+  
+  #afh:hover
+  {
+    animation: none; 
+  }
+  @keyframes logo-pulse
+  {
+    0%
+    {
+      transform: scale(0.9,0.9);
+    }
+
+    50%
+    {
+      transform: scale(0.7,0.7);
+    }
+    100%
+    {
+      transform: scale(0.9,0.9);
+    }
+  }
+
+
+
+</style>
+
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", (event) => {
+  let currentFloor = 1; // start at floor 
+  let isTransitioning = false;
+  const closeButton = document.querySelector('.close-button');
+  const titleInfo = document.querySelector('.title-info');
+  const titleElement = document.querySelector(".title");
+
+  closeButton.addEventListener('click', function () {
+   titleElement.classList.remove('title-hover');
+  });
+
+
+
+
+  const sectionDescriptions = {
+    1: "Each day at AFH our teen artists and designers work on client-commissioned jobs with creative demands, real budgets, and deadlines. We work with developers, architectural firms, art consultants, financial institutions, biotech companies, law firms, hospitals, schools, nonprofits and more. Through these jobs, the diverse and numerous connections they form, our teens learned and earned in 2022 resulting in over $1.2 million in revenue. And through sharing their voice on the public stage, our teens put their mark across Boston!",
+    2: "Each day at AFH our teen artists and designers work on client-commissioned jobs with creative demands, real budgets, and deadlines. We work with developers, architectural firms, art consultants, financial institutions, biotech companies, law firms, hospitals, schools, nonprofits and more. Through these jobs, the diverse and numerous connections they form, our teens learned and earned in 2022 resulting in over $1.2 million in revenue. And through sharing their voice on the public stage, our teens put their mark across Boston!",
+    3: "Outside our commissioned work and public art, AFH builds community and support through year-round events—from fundraisers, to Open Studios, to exhibitions and art markets where teen artists and designers have the opportunity to share their voice and sell their work. 2022 set another record for growing our community of friends and donors.",
+    4: "Outside our commissioned work and public art, AFH builds community and support through year-round events—from fundraisers, to Open Studios, to exhibitions and art markets where teen artists and designers have the opportunity to share their voice and sell their work. 2022 set another record for growing our community of friends and donors.",
+    5: "",
+    6: "",
+  };
+  const floorTitles = {
+    1: "Expanding Our Impact",
+    2: "Expanding Our Impact",
+    3: "Building Community",
+    4: "Building Community",
+    5: "Towards New Horizons",
+    6: "Towards New Horizons",
+  };
+
+  const nodesData = [
+    //world 1
+    {title: "AFH & Mass General Cancer Center Collaborate for Public Good",link: "https://www.afhannualreport.org/mass-general-cancer",},
+    {title: "Teen Voices on the Public Stage", link: "https://www.afhannualreport.org/herstory",},
+    {title: "Putting It All on the Table!",link: "https://www.afhannualreport.org/quin-house",},
+    // world 2
+    { title: "A Long-Term Partnership that \"Lights Up\" Boston", link: "https://www.afhannualreport.org/illuminus2"},
+    { title: "The Creative Vision of Teen Designers", link: "https://www.afhannualreport.org/cascade"},
+    { title: "Designing Boston & Going Global with SmartBear", link: "https://www.afhannualreport.org/smartbear"},
+    // world 3
+        { title: "Projecting Our Voice on Corporate Walls", link: "https://www.afhannualreport.org/art-leasing"},
+    { title: "When a Venue Is More Than a Space", link: "https://www.afhannualreport.org/afh-venue"},
+    { title: "Why can't my child do this in their school?", link: "https://www.afhannualreport.org/afh-co-lab"},
+    { title: "The <i>Last</i> Greatest Party on Earth", link: "https://www.afhannualreport.org/last-greatest-party"},
+    { title: "At AFH, We Support the Whole Teen", link: "https://www.afhannualreport.org/education"},
+    // world 4
+    { title: "Open Studio", link: "https://www.afhannualreport.org/open-studio"},
+    { title: "Introducing the AFH Artists Fellowship", link: "https://www.afhannualreport.org/afh-fellowship"},
+    { title: "The BIG Summer Show", link: "https://www.afhannualreport.org/big-summer-show"},
+    { title: "Our Holiday Market", link: "https://www.afhannualreport.org/holiday-market"},
+  ];
+
+  const container = document.getElementById("nodesContainer");
+
+  nodesData.forEach((item) => {
+    const nodeDiv = document.createElement("div");
+    nodeDiv.className = "node";
+
+    const img = document.createElement("img");
+    img.className = "dot";
+    img.src = "https://static1.squarespace.com/static/646e314847f2317236a9823a/t/65787b944d4d61284df0dbde/1702394772348/Touchpoint.png";
+    img.alt = "Hover to reveal popup";
+
+    const popupDiv = document.createElement("div");
+    popupDiv.className = "popup";
+
+    const titleDiv = document.createElement("div");
+    titleDiv.className = "popup-title"; 
+    titleDiv.innerHTML = item.title;
+
+    const a = document.createElement("a");
+    a.href = item.link;
+    a.textContent = "Read Story";
+
+    popupDiv.appendChild(titleDiv);
+    popupDiv.appendChild(a);
+
+    nodeDiv.appendChild(img);
+    nodeDiv.appendChild(popupDiv);
+
+    container.appendChild(nodeDiv);
+
+  });
+
+  const changeAFHZIndex = (zIndex) => {
+    const afhElement = document.getElementById("afh");
+    if (afhElement) {
+      afhElement.style.zIndex = zIndex;
+    }
+  };
+    
+  //PLAYS THE DOOR ANIMATION ONCE YOU CLICK ON THE DOORS//
+  //   left.onclick = function(){
+  //   left.classList.add('animate');
+  //   right.classList.add('animate');
+  //     console.log("LEFT CLICK");
+  //  };
+
+  // right.onclick = function(){
+  //   left.classList.add('animate');
+  //   right.classList.add('animate');
+  // }
+    
+//SCROLLING (UNCOMMENT TO RE-ENABLE SCROLLING)//
+  function disableScroll() {
+      window.addEventListener('wheel', preventScroll, { passive: false });
+  }
+
+  function enableScroll() {
+      window.removeEventListener('wheel', preventScroll, { passive: false });
+  }
+
+  function preventScroll(e) {
+      e.preventDefault();
+  }
+
+  disableScroll();
+
+  function navigateToFloor(floor) {
+    const element = document.getElementById(floor.toString());
+    const titleElement = document.querySelector(".title");
+    const titleInfo = document.querySelector(".title-info");
+    const titleDescription= document.querySelector(".title-description");
+    const nodes = document.querySelectorAll(".node");
+    isTransitioning = true;
+    changeAFHZIndex(-2)
+
+    console.log(currentFloor)
+
+     // Check if the current floor is 1 or 3
+    if (currentFloor === 1 || currentFloor === 3 || currentFloor === 5 ) {
+    // Add the hover class to simulate hover state
+    titleElement.classList.add('title-hover');
+    titleInfo.style.display = 'block';
+
+    // Remove the hover class after 5 seconds
+    setTimeout(() => {
+      titleElement.classList.remove('title-hover');
+    }, 26000); // 26000 milliseconds = 26 seconds
+  }
+
+    // function to change the z-index of all nodes
+    const changeZIndex = (zIndex) => {
+    nodes.forEach((node) => {
+      node.style.zIndex = zIndex;
+    });
+  };
+
+    if (element) {
+      changeZIndex(-2);
+      // Scroll to the selected floor
+      const elementRect = element.getBoundingClientRect();
+      const absoluteElementTop = elementRect.top + window.pageYOffset;
+      const middle = absoluteElementTop - window.innerHeight / 2 + elementRect.height / 2;
+
+      window.scrollTo({
+        top: middle,
+        behavior: "smooth",
+      });
+
+      setTimeout(() => {
+      changeZIndex(2);
+      changeAFHZIndex(2);
+    }, 1000);
+
+      // update the title text
+      titleElement.textContent = floorTitles[floor];
+
+      //update the title info text describing each piece of info
+      titleDescription.textContent = sectionDescriptions[floor];
+
+    if (sectionDescriptions[floor]) {
+        titleDescription.textContent = sectionDescriptions[floor];
+        titleInfo.style.display = 'block'; 
+    } else {
+        titleInfo.style.display = 'none';
+    }
+
+      // reset style for all floor options
+      for (let i = 1; i <= 6; i++) {
+        var floorOption = document.getElementById(i * 10);
+        floorOption.style.color = "#F92C9B";
+        floorOption.style.backgroundColor = "#432736";
+      }
+
+      // highlight the selected floor option
+      var selectedFloorOption = document.getElementById(floor * 10);
+      selectedFloorOption.style.color = "#FFFFFF";
+      selectedFloorOption.style.backgroundColor = "#F92C9B";
+
+      // setTimeout(() => {
+      //   changeZIndex(2);
+      // }, 1000);
+    }
+  }
+
+  // event listeners for buttons
+  document
+    .getElementById("elevator-button-up")
+    .addEventListener("click", function () {
+      if (currentFloor < 6) {
+        currentFloor++;
+        navigateToFloor(currentFloor);
+      }
+    });
+
+  document
+    .getElementById("elevator-button-down")
+    .addEventListener("click", function () {
+      if (currentFloor > 1) {
+        currentFloor--;
+        navigateToFloor(currentFloor);
+      }
+    });
+
+    // event listeners to floor indicators
+    const floors = [1, 2, 3, 4, 5, 6]; // Array of floor numbers
+    floors.forEach(floor => {
+      document.getElementById(floor * 10).addEventListener("click", function() {
+        currentFloor = floor;
+        navigateToFloor(currentFloor);
+      });
+    });
+
+  // navigate to floor 5 on load
+  navigateToFloor(currentFloor);
+});
+
+</script>
