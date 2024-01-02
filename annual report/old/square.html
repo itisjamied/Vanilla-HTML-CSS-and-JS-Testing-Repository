@@ -1,0 +1,328 @@
+<html>
+ 
+<!-- overlay -->
+  <img 
+    src="https://static1.squarespace.com/static/646e314847f2317236a9823a/t/656f9493126ada2c59829bf0/1701811347422/overlay.png"
+    alt="Overlay Border"
+    class="overlay"
+  >
+<!-- title -->
+  <div class="title-container">
+    <h1 class="title">Title</h1>
+  </div>
+<!-- floor indicator -->
+<div class="floor-indicator-container">
+  <div class="floor-indicator">
+    <div class="panel">
+      <div class="option" id="60"> R </div>
+      <div class="option" id="50"> F5 </div>
+      <div class="option" id="40"> F4 </div>
+      <div class="option" id="30"> F3 </div>
+      <div class="option" id="20"> F2 </div>
+      <div class="option" id="10"> F1 </div>
+    </div>
+  </div>
+</div>
+<!--  nav buttons -->
+  <div class="navButtons">
+    <div class="nav-button-container">
+      <a  class="nav-button" href="https://www.afhannualreport.org/">Letter</a>
+    </div>
+    <div class="nav-button-container">
+      <a class="nav-button" href="https://www.afhannualreport.org/supporters">Supporters</a>
+    </div>
+    <div class="nav-button-container">
+      <a class="nav-button" href="https://www.afhboston.org/information">Numbers</a>
+    </div>
+  </div>
+<!--  elevator button -->
+ <div class="elevatorButtons">
+   <div class="elevator-button-container">
+    <div id="elevator-button-up" class="elevator-button">
+        <a href="javascript:void(0)"> <img src="https://static1.squarespace.com/static/646e314847f2317236a9823a/t/65721c0bedebf862ebf02bbb/1701977099980/UpArrow.png" alt="Click to Move Up a Floor."></a>
+   
+    </div>
+   </div>
+   <div class="elevator-button-container">
+    <div id="elevator-button-down" class="elevator-button">
+        <a href="javascript:void(0)"><img src="https://static1.squarespace.com/static/646e314847f2317236a9823a/t/65721c0fe4334e674c611bf3/1701977103932/DownArrow.png"/a>
+    </div>
+   </div>
+  </div>
+
+
+
+</html>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  display:none;
+}
+
+footer {
+display:none;   
+}
+
+/* ---------- overlay --------- */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ---------- title --------- */
+
+.title-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; 
+  margin-top: 3vh;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 60px;
+}
+
+/* ---------- floor indicator --------- */
+
+.floor-indicator-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  left:0%;
+  top: 0%;
+  height: 100vh;
+  z-index: 2;
+  margin-left: 2vw;
+}
+
+.floor-indicator {
+  background-color: #62359E;
+  padding: 15px;
+  border-radius: 12px;
+  border: 3px solid #62359E;
+  background: #62359E;
+  box-shadow: 0px 6px 0px 4px #49207F;
+}
+
+.panel {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #F92C9B;
+  padding: 10px;
+  border-radius: 12px;
+  height: 40vh;
+}
+
+.option {
+  color: white;
+  font-weight:bold;  
+  text-align: center;
+  font-family: 'Modern-Bold';
+  width: 4vw;
+} 
+
+/* ---------- bottom nav buttons --------- */
+
+
+.navButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 3vh; 
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+.nav-button {
+  font-size: 24px;
+  padding: 20px;
+  margin: 5px;
+  background-color: #F92C9B;
+  color: #FFDA05;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: 1px solid #D41D7F;
+  background: #F92C9B;
+  box-shadow: 0px 4px 0px 4px #D41D7F;
+  width: 10vw;
+}
+
+.nav-button-container {
+  border-radius: 12px;
+  background: #62359E;
+  box-shadow: 0px 4px 0px 2px #4E2586;
+  padding: 10px 10px;
+  margin: 10px;
+  width: 12vw;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-button:hover {
+  background-color: #D41D7F; 
+  box-shadow: 0 2px #D41D7F; 
+  transform: translateY(4px); 
+}
+
+/* ---------- elevator buttons --------- */
+
+.elevator-button-container {
+  border-radius: 12px;
+  border: 3px solid #531E9B;
+  background: #7024D6;
+  box-shadow: 0px 4px 0px 2px #531E9B;
+  margin-top:2vh;
+  padding: 10px 8px;
+}
+  
+
+.elevatorButtons {
+  position: fixed;
+  right: 3vw;
+  top: 50vh;
+}
+
+.elevator-button {
+  padding: 50px 20px;
+  background-color: #FFDA05; 
+  color: #DBBC00;
+  border: 2px solid #DBBC00; 
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease; 
+  box-shadow: 0 5px #DBBC00;
+  border-radius: 8px;
+}
+
+.elevator-button:hover {
+  background-color: #DBBC00;
+  box-shadow: 0 2px #DBBC00; 
+  transform: translateY(4px);
+}
+
+
+#Lettermark{
+  z-index:-2;
+}
+
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    let currentFloor = 1; // start at floor 1 
+
+    const floorTitles = {
+        1: "Expanding Our Mission Impact",
+        2: "Expanding Our Mission Impact",
+        3: "Building Community",
+        4: "Building Community",
+        5: "Towards New Horizons",
+        6: "Towards New Horizons"
+    };
+
+   
+
+   //  function disableScroll() {
+   //   window.addEventListener('wheel', preventScroll, { passive: false });
+   // }
+
+   // function enableScroll() {
+   //   window.removeEventListener('wheel', preventScroll, { passive: false });
+   // }
+
+   // function preventScroll(e) {
+   //   e.preventDefault();
+   // }
+
+   // disableScroll();
+
+ function navigateToFloor(floor) {
+    const element = document.getElementById(floor.toString());
+    const titleElement = document.querySelector('.title'); 
+    const nodes = document.querySelectorAll('.node');
+
+  
+
+    if (element) {
+        // changeZIndex(-2);
+        // Scroll to the selected floor
+        const elementRect = element.getBoundingClientRect();
+        const absoluteElementTop = elementRect.top + window.pageYOffset;
+        const middle = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+
+        window.scrollTo({
+            top: middle,
+            behavior: 'smooth'
+        });
+
+        // update the title text
+        titleElement.textContent = floorTitles[floor];
+
+        // reset style for all floor options
+        for (let i = 1; i <= 6; i++) {
+            var floorOption = document.getElementById(i * 10);
+            floorOption.style.color = "white";
+            floorOption.style.transform = "scale(1,1)";
+        }
+
+        // highlight the selected floor option
+        var selectedFloorOption = document.getElementById(floor * 10);
+        selectedFloorOption.style.color = "yellow";
+        selectedFloorOption.style.transform = "scale(1.3,1.3)";
+
+      setTimeout(() => {
+            changeZIndex(2);
+        }, 1000);
+    }
+}
+
+
+    // event listeners for buttons
+    document.getElementById('elevator-button-up').addEventListener('click', function() {
+        if (currentFloor < 6) {
+            currentFloor++;
+            navigateToFloor(currentFloor);
+        }
+    });
+
+    document.getElementById('elevator-button-down').addEventListener('click', function() {
+        if (currentFloor > 1) {
+            currentFloor--;
+            navigateToFloor(currentFloor);
+        }
+    });
+
+    // navigate to floor 5 on load
+    navigateToFloor(currentFloor);
+});
+
+</script>
+

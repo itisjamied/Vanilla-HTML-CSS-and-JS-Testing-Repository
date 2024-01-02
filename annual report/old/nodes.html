@@ -1,0 +1,155 @@
+
+
+
+<style>
+    /* ---------- nodes ---------- */
+#nodesContainer {
+    position: relative; 
+}
+
+.node {
+  position:absolute;
+  cursor:pointer;
+  width: 6vw;
+  z-index:2;
+}
+
+.node .dot {
+  transition: transform 0.3s ease;
+  animation: pulse 1s infinite;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.node:hover .dot {
+    animation: none; 
+}
+  
+.node .popup {
+    display: none;
+    position: absolute;
+    width: 350px;
+    height: 300px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:3;
+    background-image: url('https://static1.squarespace.com/static/646e314847f2317236a9823a/t/6577300edf36dd556ae9f649/1702309902327/Squircle.png')
+}
+
+.node:hover .popup {
+  display: block;  
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.popup h2 {
+  margin-left:1vw;
+  font-size:30px;
+  text-align:center;
+}
+
+.popup a {
+  margin-left:1vw;
+  font-size:20px;
+  text-align:center;
+}
+
+.node:nth-child(1) {
+    position:absolute;
+    top: 400vh;
+    left: 70vw;
+}
+
+.node:nth-child(2) {
+    position:absolute;
+    top: 409vh;
+    left: 40vw;
+}
+  
+.node:nth-child(3) {
+    position:absolute;
+    top: 415vh;
+    left: 20vw;
+}
+
+.node:nth-child(4) {
+    position:absolute;
+    top: 409vh;
+    left: 40vw;
+}
+</style>
+
+<script>
+     const nodesData = [
+      //world 1
+        { title: "AFH & Mass General Cancer Center Collaborate for Public Good", link: "https://www.afhannualreport.org/1-mass-general-cancer"},
+        { title: "The Voices on the Public Stage", link: "https://www.afhannualreport.org/1-herstory"},
+        { title: "When a Client Goes Deep!", link: "https://www.afhannualreport.org/1-quin-house" },
+        { title: "Open Studio", link: "https://www.afhannualreport.org/2-open-studio"},
+      //world 2
+        // { title: "A long-term partnership that \"lights up\" Boston", link: "https://www.afhannualreport.org/illuminus"},
+        // { title: "The Creative Vision of Teen Designers", link: "https://www.afhannualreport.org/1-cascade"},
+        // { title: "Designing Boston & Going Global with SmartBear", link: "https://www.afhannualreport.org/1-smartbear"},
+      //world 3
+        // { title: "The Last Greatest Party on Earth", link: "https://www.afhannualreport.org/2-last-greatest-party"},
+        // { title: "A Space with a Mission", link: "https://www.afhannualreport.org/1-afh-venue"},
+        // { title: "Why can't my child do this in their school?", link: "https://www.afhannualreport.org/1-afh-co-lab"},
+        // { title: "Missing Content", link: "https://www.afhannualreport.org/1-art-leasing"},
+        // { title: "At AFH, We Support the Whole Teen", link: "https://www.afhannualreport.org/1-education"},
+      //world 4
+        // { title: "Open Studio", link: "https://www.afhannualreport.org/2-open-studio"},
+        // { title: "Introducing the AFH Artists Fellowship", link: "https://www.afhannualreport.org/2-afh-fellowship"},
+        // { title: "The BIG Summer Show", link: "https://www.afhannualreport.org/2-big-summer-show"},
+        // { title: "Our Holiday Market", link: "https://www.afhannualreport.org/2-holiday-market"},
+    ];
+
+    const container = document.getElementById('nodesContainer');
+
+     nodesData.forEach(item => {
+        const nodeDiv = document.createElement('div');
+        nodeDiv.className = 'node';
+
+        const img = document.createElement('img');
+        img.className = 'dot';
+        img.src = 'https://static1.squarespace.com/static/646e314847f2317236a9823a/t/65787b944d4d61284df0dbde/1702394772348/Touchpoint.png'; 
+        img.alt = 'Hover to reveal popup';
+
+        const popupDiv = document.createElement('div');
+        popupDiv.className = 'popup';
+
+        const h2 = document.createElement('h2');
+        h2.textContent = item.title;
+
+        const a = document.createElement('a');
+        a.href = item.link;
+        a.textContent = 'Read Story';
+
+        popupDiv.appendChild(h2);
+        popupDiv.appendChild(a);
+
+        nodeDiv.appendChild(img);
+        nodeDiv.appendChild(popupDiv);
+
+        container.appendChild(nodeDiv);
+    });
+
+ // Function to change the z-index of all nodes
+ const changeZIndex = (zIndex) => {
+        nodes.forEach(node => {
+            node.style.zIndex = zIndex;
+        });
+    };
+
+</script>
