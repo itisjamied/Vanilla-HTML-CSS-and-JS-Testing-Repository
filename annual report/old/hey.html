@@ -685,8 +685,10 @@ nodesData.forEach((item) => {
 // FUNC: CHANGE Z-INDEX OF AFH LOGO
 const changeAFHZIndex = (zIndex) => {
   const afhElement = document.getElementById("afh");
+  const afhEndNote = document.querySelector(".endNote");
   if (afhElement) {
     afhElement.style.zIndex = zIndex;
+    afhEndNote.style.zIndex = zIndex; 
   }
 };
 
