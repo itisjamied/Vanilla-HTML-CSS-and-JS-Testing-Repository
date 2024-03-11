@@ -2,5 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.text-white-outline {
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    color: #020202;
+    text-shadow: 0 0 1.5px #BEBEBE, 0 0 1.5px #BEBEBE; /* This is a custom class you would need to define */
+}
   
