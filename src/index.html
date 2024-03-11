@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page Title</title>
+    <title>Pross Test</title>
     <link rel="stylesheet" href="input.css">
     <link href="./output.css" rel="stylesheet">
-
+    <!-- AOS css library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-pross-black flex flex-col justify-center items-center min-h-screen space-y-10 py-20">
 
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
+    <h1 class="text-3xl font-bold text-white p-40" data-aos="fade-up" data-aos-duration="1000">
+        Fade Up
     </h1>
 
+    <h1 class="text-3xl font-bold text-white p-40" data-aos="fade-down" data-aos-duration="1000">
+        Fade Down
+    </h1>
+
+    <h1 class="text-3xl font-bold text-white p-40" data-aos="fade-right" data-aos-duration="1000">
+        Fade Right
+    </h1>
+
+    <h1 class="text-3xl font-bold text-white p-40" data-aos="fade-left" data-aos-duration="1000">
+        Fade Left
+    </h1>
+
+    <h1 class="text-3xl font-bold text-white  p-40" data-aos="zoom-in" data-aos-duration="1000">
+        Zoom In
+    </h1>
+
+    <h1 class="text-3xl font-bold text-white p-40" data-aos="zoom-out" data-aos-duration="1000">
+        Zoom Out
+    </h1>
+
+    <h1 class="text-3xl font-bold text-white p-40" data-aos="flip-left" data-aos-duration="1000">
+        Flip Left
+    </h1>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
