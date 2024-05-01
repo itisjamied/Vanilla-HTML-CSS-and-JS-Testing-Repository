@@ -1,16 +1,23 @@
 /* Reset CSS */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-position: 0px 0px;
+  height: 100vh;
+  background-image: conic-gradient(
+    from 264deg at 50% 50%,
+    #00ffffff 2%,
+    #073affff 51%,
+    #00ffffff 100%
+  );
 }
 
 h1 {
-    color: #333;
+  color: #333;
 }
