@@ -1,0 +1,12 @@
+{
+  "name": "vanilla-html-css-js-testing",
+  "version": "1.0.0",
+  "description": "Boilerplate for testing features in a vanilla HTML, CSS, and JavaScript environment",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
